@@ -2,27 +2,21 @@ function convertToJson(res) {
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error("Bad Response");
+    throw new Error('Bad Response');
   }
 }
 
-export default class ProductData {
+export default class ProductData  {
   constructor(category) {
     this.category = category;
     this.path = `../json/${this.category}.json`;
   }
   getData() {
-    fetch("../json/tents.json")
-      .then(convertToJson)
-      .then((data) => {
-        products = data;
-      });
+    return fetch(this.path)
+      .then(convertToJson).then((data) => data);
   }
-  findProductById(id) {}
+  async findProductById(id) {
+    const products = await this.getData()
+    return products.find((item) => item.Id === id);
+  }
 }
-
-getProductsData();
-// add listener to Add to Cart button
-document.getElementById("addToCart").addEventListener("click", addToCart);
-
-// get tents data
