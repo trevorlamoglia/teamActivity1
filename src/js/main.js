@@ -6,6 +6,4 @@ const listElement = document.querySelector('.product-list');
 
 const myList = new ProductList('tents', myData, listElement);
 
-console.log(myList);
-
 myList.init();
