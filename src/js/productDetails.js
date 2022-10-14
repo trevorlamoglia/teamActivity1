@@ -7,6 +7,7 @@ export default class ProductDetails {
     this.productId = productId;
     this.product = {};
     this.dataSource = dataSource;
+    this.cartItems = [];
 
   }
   async init() {
@@ -16,10 +17,20 @@ export default class ProductDetails {
     document.getElementById('addToCart')
       .addEventListener('click', this.addToCart.bind(this));
   }
-  addToCart() {
 
-    setLocalStorage('so-cart', this.product);
+  addToCart() {
+    this.cartAnimate();
+
+    this.cartItems.push(this.product);
+    setLocalStorage('so-cart', this.cartItems);
   }
+
+  cartAnimate(){
+    document.querySelector('.cart').classList.add('.cart-animate');
+    setTimeout(function () {document.querySelector('.cart').classList.remove('.cart-animate')}, 2000);
+
+  }
+
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
     <h2 class="divider">${this.product.NameWithoutBrand}</h2>

@@ -1,10 +1,16 @@
+//const cartItems = [];
+
 function getLocalStorage(key) {
+  //console.log(localStorage.getItem(key));
+
   return JSON.parse(localStorage.getItem(key));
 }
 
 function getCartContents() {
   let markup = '';
+  
   const cartItems = getLocalStorage('so-cart');
+  console.log(getLocalStorage('so-cart'));
   const htmlItems = cartItems.map((item) => renderCartItem(item));
   document.querySelector('.product-list').innerHTML = htmlItems.join('');
   // document.querySelector(".product-list").innerHTML = renderCartItem(cartItems);
