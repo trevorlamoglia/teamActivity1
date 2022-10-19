@@ -230,3 +230,28 @@ footer {
   from {background-color: red;}
   to {background-color: yellow;}
 }
+
+/* Style the Product-Listing page */
+.category-list {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.category-list a {
+  text-decoration: none;
+  color: var(--dark-grey);
+}
+
+/* Styles for product lists */
+.categories {
+  flex: 1 1 45%;
+  margin: 0.25em;
+  padding: 0.5em;
+  max-width: 100px;
+  text-align: center;
+}
