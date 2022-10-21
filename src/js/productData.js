@@ -17,7 +17,7 @@ export default class ProductData  {
                 .then(convertToJson).then((data) => data.Result);
   }
   async findProductById(id) {
-    const products = await this.getData()
-    return products.find((item) => item.Id === id);
+    return await fetch(baseURL + `product/${id}`).then(convertToJson)
+      .then((data) => data.Result);
   }
 }
