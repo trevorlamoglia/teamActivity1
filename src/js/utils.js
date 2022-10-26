@@ -73,6 +73,7 @@ export async function loadHeaderFooter() {
   const footerElement = document.getElementById('main-footer');
   renderWithTemplate(header, headerElement);
   renderWithTemplate(footer, footerElement);
+  updateCartNumber();
 }
 
 export function updateCartNumber() {
