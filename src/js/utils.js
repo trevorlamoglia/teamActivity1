@@ -74,3 +74,12 @@ export async function loadHeaderFooter() {
   renderWithTemplate(header, headerElement);
   renderWithTemplate(footer, footerElement);
 }
+
+export function updateCartNumber() {
+  let cartNum = document.querySelector('#cart-number');
+
+  let cartContents = getLocalStorage('so-cart');
+
+  cartNum.innerHTML = `${cartContents.length}`;
+
+}

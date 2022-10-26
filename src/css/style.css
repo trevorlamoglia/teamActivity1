@@ -288,3 +288,49 @@ footer {
   font-size: var(--small-font);
   padding: 1em;
 }
+
+#cart-number {
+  color: white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  padding: 5px;
+  background: red;
+  text-align: center;
+  font-size: 11px;
+  font-weight: bolder;
+  position: relative;
+  left: -10px;
+  top: -20px;
+  opacity: 0.9;
+}
+
+.cart a{
+  text-decoration: none;
+}
+
+.cart-animate {
+  animation: tilt-shaking 0.25s infinite;
+}
+
+@keyframes tilt-shaking {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(5deg);
+  }
+
+  50% {
+    transform: rotate(0eg);
+  }
+
+  75% {
+    transform: rotate(-5deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}

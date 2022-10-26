@@ -1,7 +1,8 @@
 import {
   setLocalStorage,
   getLocalStorage,
-  loadHeaderFooter
+  loadHeaderFooter,
+  updateCartNumber
 } from './utils.js';
 
 
@@ -21,6 +22,11 @@ export default class ProductDetails {
       .addEventListener('click', this.addToCart.bind(this));
   }
   addToCart() {
+    const cartanim = document.querySelector('#cart-animation');
+    cartanim.classList.add('cart-animate');
+    // setInterval(cartanim.classList.remove('cart-animate'), 2000);
+    // clearInterval();
+    setTimeout(function(){cartanim.classList.remove('cart-animate')}, 2000);
     // to fix the cart we need to get anything that is in the cart already.
     let cartContents = getLocalStorage('so-cart');
     //check to see if there was anything there
@@ -30,6 +36,8 @@ export default class ProductDetails {
     // then add the current product to the list
     cartContents.push(this.product);
     setLocalStorage('so-cart', cartContents);
+    updateCartNumber();
+
   }
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
