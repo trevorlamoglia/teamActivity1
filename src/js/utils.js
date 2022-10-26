@@ -85,9 +85,11 @@ export function updateCartNumber() {
     console.log(cartContents);
     cartNum.innerHTML = `${cartContents.length}`;
     cartNum.classList.remove('hidden');
+    cartNum.classList.remove('add-margin');
   }
   else{
     cartNum.classList.add('hidden');
+    cartNum.classList.add('add-margin');
   }
   // cartNum.classList.remove('hidden');
   

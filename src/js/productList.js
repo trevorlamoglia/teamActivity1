@@ -35,6 +35,12 @@ export default class ProductList {
     template.querySelector('.card__brand').textContent = product.Brand.Name;
     template.querySelector('.card__name').textContent = product.NameWithoutBrand;
     template.querySelector('.product-card__price').textContent += product.FinalPrice;
+    console.log(product.SuggestedRetailPrice);
+    console.log(product.FinalPrice);
+
+    // Only show discount if the prices are different
+    if(product.FinalPrice != null && product.FinalPrice < product.SuggestedRetailPrice)
+      template.querySelector('.product-card__discount').textContent += `You could save $${Math.trunc(product.SuggestedRetailPrice - product.FinalPrice)}`;
     return template;
   }
 
