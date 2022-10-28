@@ -5,13 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sleep Outside | Checkout</title>
     <link rel="stylesheet" href="../css/style.css" />
-    <script src="../js/checkout.js" type="module"></script>
+    <script src="../js/checkoutprocess.js" type="module"></script>
   </head>
   <body>
     <header class="divider" id="main-header"></header>
     <main class="divider">
+      <h2>Review and Place your Order</h2>
       <section class="products">
-        <h2>Review & Place your Order</h2>
+        <form name="checkout">
+          <fieldset>
+            <legend>Shipping</legend>
+            <div class="checkout_name">
+              <label name="fname">First Name
+                <input type="text" name="f_name" required>
+              </label>
+              <label name="lname">Last Name
+                <input type="text" name="lname" required>
+              </label>
+            </div>
+
+            <div class="checkout_address">
+              <label name="street">Street
+                <input type="text" name="street" required>
+              </label>
+              <label name="city">City
+                <input type="text" name="city" required>
+              </label>
+              <label name="state">State
+                <input type="text" name="state" required>
+              </label>
+              <label name="zip">Zip
+                <input type="number" name="zip" required>
+              </label>
+            </div>
+          </fieldset> 
+
+          <fieldset>
+            <legend>Payment</legend>
+            <div class="checkout_payment">
+              <label name="card_number">Card number
+                <input type="number" name="card_number" required>
+              </label>
+              <label name="expiration">Expiration
+                <input type="text" name="expiration" required>
+              </label>
+              <label name="security_code">Security Code
+                <input type="number" name="security_code" required>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Order Summary</legend>
+            <div class="checkout_summary">
+              <label name="item_subtotal">Item Subtotal</label>
+              <label name="shipping_estimate">Shipping Estimate</label>
+              <label name="tax">Tax</label>
+              <label name="order_total">Order Total</label>
+            </div>
+          </fieldset>
+          
+          <input class="submitBtn" type="submit" value="Checkout">
+        </form>
       </section>
     </main>
     <footer id="main-footer"></footer>
