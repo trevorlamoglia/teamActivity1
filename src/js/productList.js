@@ -40,7 +40,7 @@ export default class ProductList {
 
     // Only show discount if the prices are different
     if(product.FinalPrice != null && product.FinalPrice < product.SuggestedRetailPrice)
-      template.querySelector('.product-card__discount').textContent += `You could save $${Math.trunc(product.SuggestedRetailPrice - product.FinalPrice)}`;
+      template.querySelector('.product-card__discount').textContent += `Discount: $${Math.trunc(product.SuggestedRetailPrice - product.FinalPrice)} off`;
     return template;
   }
 
