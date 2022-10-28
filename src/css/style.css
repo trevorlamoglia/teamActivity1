@@ -210,6 +210,47 @@ button {
   text-align: left;
 }
 
+.product-card__discount{
+  background-color: red;
+  color: white;
+  font-size: larger;
+  font-weight: bolder;
+  padding: .5em;
+  text-align: center;
+}
+
+.flag-discount {
+  border-radius: 6px 0 0 6px;
+  color: #fff;
+  display: block;
+  float: left;
+  padding: 10px 20px;
+  background: #93274f;
+  font-size: 20px;
+  font-weight: 400;
+  position: relative;
+}
+.flag-discount::before,
+.flag-discount::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  display: block;
+}
+.flag-discount::before {
+  top: 0;
+  border-width: 22px 15px 0 0;
+  border-color: #93274f transparent transparent transparent;
+}
+.flag-discount::after {
+  bottom: 0;
+  border-width: 0 15px 22px 0;
+  border-color: transparent transparent #93274f transparent;
+}
+
 .card__brand {
   font-size: var(--small-font);
 }
@@ -292,17 +333,23 @@ footer {
 #cart-number {
   color: white;
   border-radius: 50%;
-  width: 16px;
-  height: 16px;
-  padding: 5px;
+  padding: 5px 8px;
   background: red;
   text-align: center;
   font-size: 11px;
   font-weight: bolder;
   position: relative;
-  left: -10px;
+  left: -16px;
   top: -20px;
   opacity: 0.9;
+}
+
+.hidden{
+  display: none;
+}
+
+.add-margin{
+  margin-right: 16px;
 }
 
 .cart a{

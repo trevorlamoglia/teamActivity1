@@ -42,11 +42,13 @@ export default class ProductDetails {
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
     <h2 class="divider">${this.product.NameWithoutBrand}</h2>
+    <span class="flag-discount">${Math.trunc(((this.product.SuggestedRetailPrice - this.product.FinalPrice) / this.product.SuggestedRetailPrice) * 100)}% Off</span>
     <img
       class="divider"
       src="${this.product.Images.PrimaryLarge}"
       alt="${this.product.NameWithoutBrand}"
     />
+    <p class="product-card__discount"> You'd be saving $${Math.trunc(this.product.SuggestedRetailPrice - this.product.FinalPrice)}</p>
     <p class="product-card__price">$${this.product.FinalPrice}</p>
     <p class="product__color">${this.product.Colors[0].ColorName}</p>
     <p class="product__description">

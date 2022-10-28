@@ -73,6 +73,7 @@ export async function loadHeaderFooter() {
   const footerElement = document.getElementById('main-footer');
   renderWithTemplate(header, headerElement);
   renderWithTemplate(footer, footerElement);
+  updateCartNumber();
 }
 
 export function updateCartNumber() {
@@ -80,6 +81,17 @@ export function updateCartNumber() {
 
   let cartContents = getLocalStorage('so-cart');
 
-  cartNum.innerHTML = `${cartContents.length}`;
+  if (cartContents != null) {
+    console.log(cartContents);
+    cartNum.innerHTML = `${cartContents.length}`;
+    cartNum.classList.remove('hidden');
+    cartNum.classList.remove('add-margin');
+  }
+  else{
+    cartNum.classList.add('hidden');
+    cartNum.classList.add('add-margin');
+  }
+  // cartNum.classList.remove('hidden');
+  
 
 }
