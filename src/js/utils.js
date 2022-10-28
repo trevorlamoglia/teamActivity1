@@ -86,12 +86,11 @@ export function updateCartNumber() {
     cartNum.innerHTML = `${cartContents.length}`;
     cartNum.classList.remove('hidden');
     cartNum.classList.remove('add-margin');
-  }
-  else{
+  } else {
     cartNum.classList.add('hidden');
     cartNum.classList.add('add-margin');
   }
   // cartNum.classList.remove('hidden');
-  
+
 
 }
