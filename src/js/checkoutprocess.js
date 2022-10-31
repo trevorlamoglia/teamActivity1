@@ -1,7 +1,10 @@
-import { getLocalStorage } from './utils.js';
+import {
+  getLocalStorage
+} from './utils.js';
 import ExternalServices from './ExternalServices.js';
 
 const services = new ExternalServices();
+
 function formDataToJSON(formElement) {
   const formData = new FormData(formElement),
     convertedJSON = {};
@@ -73,6 +76,7 @@ export default class CheckoutProcess {
     tax.innerText = '$' + this.tax;
     orderTotal.innerText = '$' + this.orderTotal;
   }
+
   async checkout() {
     const formElement = document.forms['checkout'];
 
