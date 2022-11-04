@@ -1,11 +1,14 @@
 const baseURL = 'http://server-nodejs.cit.byui.edu:3000/'
 //const baseURL = 'http://server-nodejs.cit.byui.edu:3000/checkout';
 
-function convertToJson(res) {
+async function convertToJson(res) {
+  const response = await res.json();
+  const JsonResp = JSON.stringify(response);
+
   if (res.ok) {
     return res.json();
   } else {
-    throw new Error('Bad Response');
+    throw { name: 'servicesError', message: JsonResp };
   }
 }
 
