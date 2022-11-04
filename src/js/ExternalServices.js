@@ -6,7 +6,7 @@ async function convertToJson(res) {
   const JsonResp = JSON.stringify(response);
 
   if (res.ok) {
-    return res.json();
+    return response;
   } else {
     throw { name: 'servicesError', message: JsonResp };
   }
@@ -43,7 +43,7 @@ export default class ExternalServices {
     };
 
     
-    return await fetch(baseURL + 'checkout/', options);
+    return await fetch(baseURL + 'checkout/', options).then(convertToJson);
   }
 
 }
