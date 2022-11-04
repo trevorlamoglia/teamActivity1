@@ -1,5 +1,8 @@
 import {
-  getLocalStorage, removeLocalStorage
+  getLocalStorage,
+  removeLocalStorage,
+  alertMessage,
+  removeAllAlerts
 } from './utils.js';
 import ExternalServices from './ExternalServices.js';
 
@@ -87,13 +90,20 @@ export default class CheckoutProcess {
     json.tax = this.tax;
     json.shipping = this.shipping;
     json.items = packageItems(this.list);
-    //console.log(json);
+    console.log(json);
 
     try {
       const res = await services.checkout(json);
-      window.location = '../checkout/checkedout.html';
-      //console.log(res);
+      console.log(`This is a response ${res}`);
+      removeLocalStorage('so-cart');
+      location.assign('../checkout/checkedout.html');
+
     } catch (err) {
+  
+      // removeAllAlerts();
+      // for (let message in err.message) {
+      //   alertMessage(err.message[message]);
+      // }
       console.log(err);
     }
   }
