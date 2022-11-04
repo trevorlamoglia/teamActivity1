@@ -3,12 +3,12 @@ const baseURL = 'http://server-nodejs.cit.byui.edu:3000/'
 
 async function convertToJson(res) {
   const response = await res.json();
-  const JsonResp = JSON.stringify(response);
+  //const JsonResp = JSON.stringify(response);
 
   if (res.ok) {
     return response;
   } else {
-    throw { name: 'servicesError', message: JsonResp };
+    throw { name: 'servicesError', message: response };
   }
 }
 

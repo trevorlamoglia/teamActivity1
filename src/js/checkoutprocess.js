@@ -94,12 +94,12 @@ export default class CheckoutProcess {
 
     try {
       const res = await services.checkout(json);
-      console.log(`This is a response ${res}`);
+      //console.log(`This is a response ${res}`);
       removeLocalStorage('so-cart');
       location.assign('../checkout/checkedout.html');
 
     } catch (err) {
-  
+
       removeAllAlerts();
       for (let message in err.message) {
         alertMessage(err.message[message]);
