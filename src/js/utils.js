@@ -11,6 +11,11 @@ export function qs(selector) {
   return document.querySelector(selector);
 }
 
+//remove data from localStorage
+export function removeLocalStorage(key){
+  return JSON.parse(localStorage.removeItem(key));
+}
+
 // retrieve data from localstorage
 export function getLocalStorage(key) {
   return JSON.parse(localStorage.getItem(key));

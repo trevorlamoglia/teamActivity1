@@ -1,5 +1,5 @@
 import {
-  getLocalStorage
+  getLocalStorage, removeLocalStorage
 } from './utils.js';
 import ExternalServices from './ExternalServices.js';
 
@@ -91,6 +91,7 @@ export default class CheckoutProcess {
 
     try {
       const res = await services.checkout(json);
+      window.location = '../checkout/checkedout.html';
       //console.log(res);
     } catch (err) {
       console.log(err);
