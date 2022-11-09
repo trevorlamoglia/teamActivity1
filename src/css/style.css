@@ -451,3 +451,30 @@ footer {
 .alert>p {
   margin: 0;
 }
+
+/* table orders style */
+#orders {
+  border: 1px solid;
+  text-align: center;
+}
+
+#orders th {
+  border: 1px solid;
+  padding: 10px;
+}
+
+#orders td {
+  padding: 10px;
+}
+
+#orders tr {
+  padding: 10px;
+}
+
+#orders tr:nth-child(even){
+  background: #CCC;
+}
+
+#orders tr:nth-child(odd){
+  background: #FFF;
+}

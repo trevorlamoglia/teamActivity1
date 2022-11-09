@@ -44,7 +44,7 @@ export default class Admin {
       this.mainElement.innerHTML = orderHtml();
       const parent = document.querySelector('#orders tbody');
       // why not a template like we have done before?  The markup here was simple enough that I didn't think it worth the overhead...but a template would certainly work!
-      parent.innerHTML = orders.map(order => `<tr><td>${order.id}</td><td>${new Date(order.orderDate).toLocaleDateString('en-US')}</td><td>${order.items.length}</td><td>${order.orderTotal}</td></tr>`).join('');
+      parent.innerHTML = orders.map(order => `<tr><td>${order.id}</td><td>${new Date(order.orderDate).toLocaleDateString('en-US')}</td><td>${order.items.length}</td><td>${Number(order.orderTotal).toFixed(2)}</td></tr>`).join('');
     } catch (err) {
       console.log(err);
     }
