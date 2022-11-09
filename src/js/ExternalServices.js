@@ -8,7 +8,10 @@ async function convertToJson(res) {
   if (res.ok) {
     return response;
   } else {
-    throw { name: 'servicesError', message: response };
+    throw {
+      name: 'servicesError',
+      message: response
+    };
   }
 }
 
@@ -42,8 +45,36 @@ export default class ExternalServices {
       body: JSON.stringify(payload),
     };
 
-    
+
     return await fetch(baseURL + 'checkout/', options).then(convertToJson);
+  }
+
+  async loginRequest(user) {
+
+    console.log(user);
+
+    const options = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(user),
+    };
+
+    const response = await fetch(baseURL + 'login', options).then(convertToJson);
+    return response.accessToken;
+  }
+
+  async getOrders(token) {
+    const options = {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    }
+
+    const response = await fetch(baseURL + 'orders', options).then(convertToJson);
+    return response;
   }
 
 }
