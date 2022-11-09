@@ -38,12 +38,19 @@ export default class Admin {
     });
   }
 
-  async showOrders(){
-    const orders = await this.services.getOrders(this.token);
-    console.log(orders);
+  async showOrders() {
+    try {
+      const orders = await this.services.getOrders(this.token);
+      this.mainElement.innerHTML = orderHtml();
+      const parent = document.querySelector('#orders tbody');
+      // why not a template like we have done before?  The markup here was simple enough that I didn't think it worth the overhead...but a template would certainly work!
+      parent.innerHTML = orders.map(order => `<tr><td>${order.id}</td><td>${new Date(order.orderDate).toLocaleDateString('en-US')}</td><td>${order.items.length}</td><td>${order.orderTotal}</td></tr>`).join('');
+    } catch (err) {
+      console.log(err);
+    }
   }
-
 }
+
 
 function loginForm() {
   return `<fieldset class="login-form">
@@ -60,4 +67,13 @@ function loginForm() {
 </fieldset>`;
 }
 
-
+function orderHtml() {
+  return `<h2>Current Orders</h2>
+  <table id="orders">
+  <thead>
+  <tr><th>Id</th><th>Date</th><th>#Items</th><th>Total</th>
+  </thead>
+  <tbody class="order-body"></tbody>
+  </table>
+  `;
+}
