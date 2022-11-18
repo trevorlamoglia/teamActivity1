@@ -126,3 +126,21 @@ export function removeAllAlerts() {
   const alerts = document.querySelectorAll('.alert');
   alerts.forEach(alert => document.querySelector('main').removeChild(alert));
 }
+
+
+// Newsletter JS
+const newsletterBtn = document.querySelector(".newsletter-btn");
+const newsletterBtnClose = document.querySelector(".newsletter-close-btn");
+const newsletter = document.querySelector(".newsletter");
+
+newsletterBtn.addEventListener("click", modalOpen);
+newsletterBtnClose.addEventListener("click", modalClose);
+
+function modalOpen(){
+  newsletter.classList.add("active");
+  newsletterBtn.classList.add("active");
+};
+function modalClose(){
+  newsletter.classList.remove("active");
+  newsletterBtn.classList.remove("active");
+};
