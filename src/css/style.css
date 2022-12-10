@@ -368,7 +368,7 @@ footer {
   text-decoration: none;
 }
 
-.cart-animate {
+.cart-animation {
   animation: tilt-shaking 0.25s infinite;
 }
 
