@@ -136,11 +136,12 @@ const newsletter = document.querySelector(".newsletter");
 newsletterBtn.addEventListener("click", modalOpen);
 newsletterBtnClose.addEventListener("click", modalClose);
 
-function modalOpen(){
+function modalOpen() {
   newsletter.classList.add("active");
   newsletterBtn.classList.add("active");
 };
-function modalClose(){
+
+function modalClose() {
   newsletter.classList.remove("active");
   newsletterBtn.classList.remove("active");
 };
