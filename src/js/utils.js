@@ -130,18 +130,16 @@ export function removeAllAlerts() {
 
 // Newsletter JS
 const newsletterBtn = document.querySelector(".newsletter-btn");
-const newsletterBtnClose = document.querySelector(".newsletter-close-btn");
 const newsletter = document.querySelector(".newsletter");
 
-newsletterBtn.addEventListener("click", modalOpen);
-newsletterBtnClose.addEventListener("click", modalClose);
 
-function modalOpen() {
+
+export function modalOpen() {
   newsletter.classList.add("active");
   newsletterBtn.classList.add("active");
 };
 
-function modalClose() {
+export function modalClose() {
   newsletter.classList.remove("active");
   newsletterBtn.classList.remove("active");
 };
