@@ -126,3 +126,20 @@ export function removeAllAlerts() {
   const alerts = document.querySelectorAll('.alert');
   alerts.forEach(alert => document.querySelector('main').removeChild(alert));
 }
+
+
+// Newsletter JS
+const newsletterBtn = document.querySelector(".newsletter-btn");
+const newsletter = document.querySelector(".newsletter");
+
+
+
+export function modalOpen() {
+  newsletter.classList.add("active");
+  newsletterBtn.classList.add("active");
+};
+
+export function modalClose() {
+  newsletter.classList.remove("active");
+  newsletterBtn.classList.remove("active");
+};

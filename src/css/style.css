@@ -368,7 +368,7 @@ footer {
   text-decoration: none;
 }
 
-.cart-animate {
+.cart-animation {
   animation: tilt-shaking 0.25s infinite;
 }
 
@@ -477,4 +477,319 @@ footer {
 
 #orders tr:nth-child(odd){
   background: #FFF;
+}
+
+/* Newsletter styles */
+.newsletter-container {
+  padding: 20px;
+  margin: 40px;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  padding: 50px;
+  background: #ff801e60;
+}
+
+.container a {
+  text-decoration: none;
+}
+
+.container .newsletter-btn {
+  display: block;
+  background-color: #ff801e;
+  color: #fff;
+  align-items: center;
+  padding: 14px 32px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 12px;
+}
+.container .newsletter-btn:hover {
+  background-color: #282828;
+}
+.container .newsletter-btn.active {
+  display: none;
+}
+
+.container .newsletter {
+  display: none;
+  background-color: #fff;
+  padding: 0px 30px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 16px #ffffff20;
+  height: 360px;
+}
+.container .newsletter.active {
+  display: block;
+}
+
+.newsletter .newsletter-icon {
+  background-color: #ff801e;
+  display: inline-block;
+  padding: 12px 15px;
+  border-radius: 50%;
+  border: 6px solid #fff;
+  position: absolute;
+  transform: translate(145px, -65px)
+}
+
+.newsletter .newsletter-icon i {
+  font-size: 40px;
+  color: #fff;
+}
+
+.newsletter .newsletter-body {
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.newsletter-body {
+  text-align: center;
+  font-size: 24px;
+  line-height: 1.2rem;
+  text-transform: uppercase;
+  margin: 20px 0px;
+}
+.newsletter-body p:first-child {
+  font-size: 64px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #161616;
+}
+.newsletter-body p:nth-child(2) {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  color: #282828;
+}
+.newsletter-body p:last-child {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  letter-spacing: -0.04em;
+  color: #282828;
+}
+
+.newsletter .newsletter-form {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  width: 100%;
+}
+
+.newsletter-form input {
+  width: 100%;
+  border: 1px solid #dedede;
+  padding: 10px 15px;
+  margin: 10px 0;
+  font-size: 16px;
+  border-radius: 12px;
+  background-color: #ebecf090;
+}
+.newsletter-form input:focus {
+  outline: 0;
+  border: 1px solid #2d2d2d50;
+}
+.newsletter-form button {
+  width: 60%;
+  padding: 10px 15px;
+  border: 0;
+  border-radius: 12px;
+  margin-top: 10px;
+  height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  background-color: #ff801e;
+  color: #fff;
+  cursor: pointer;
+}
+.newsletter-form button:hover {
+  background-color: #282828;
+}
+
+.newsletter a {
+  text-align: center;
+  display: grid;
+  margin-top: 40px;
+  width: 100%;
+  color: #747474;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.newsletter a:hover {
+  color: #ff801e;
+}
+
+/* login styles */
+.l_container{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.l_container .forms{
+  display: flex;
+  align-items: center;
+  height: 440px;
+  width: 200%;
+  transition: height 0.2s ease;
+}
+
+.l_container .form{
+  width: 50%;
+  padding: 30px;
+  background-color: #fff;
+  transition: margin-left 0.18s ease;
+}
+
+.l_container.active .login{
+  margin-left: -50%;
+  opacity: 0;
+  transition: margin-left 0.18s ease, opacity 0.15s ease;
+}
+
+/* .l_container .signup{
+  opacity: 0;
+  transition: opacity 0.09s ease;
+}
+.l_container.active .signup{
+  opacity: 1;
+  transition: opacity 0.2s ease;
+} */
+
+.l_container.active .forms{
+  height: 600px;
+}
+.l_container .form .title{
+  position: relative;
+  font-size: 27px;
+  font-weight: 600;
+}
+
+.form .title::before{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  background-color: #4070f4;
+  border-radius: 25px;
+}
+
+.form .input-field{
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin-top: 30px;
+}
+
+.input-field input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding: 0 35px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+  border-bottom: 2px solid #ccc;
+  border-top: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid){
+  border-bottom-color: #4070f4;
+}
+
+.input-field i{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 23px;
+  transition: all 0.2s ease;
+}
+
+.input-field input:is(:focus, :valid) ~ i{
+  color: #4070f4;
+}
+
+.input-field i.icon{
+  left: 0;
+}
+.input-field i.showHidePw{
+  right: 0;
+  cursor: pointer;
+  padding: 10px;
+}
+
+.form .checkbox-text{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.checkbox-text .checkbox-content{
+  display: flex;
+  align-items: center;
+}
+
+.checkbox-content input{
+  margin-right: 10px;
+  accent-color: #4070f4;
+}
+
+.form .text{
+  color: #333;
+  font-size: 14px;
+}
+
+.form a.text{
+  color: #4070f4;
+  text-decoration: none;
+}
+.form a:hover{
+  text-decoration: underline;
+}
+
+.form .button{
+  margin-top: 35px;
+}
+
+.form .button input{
+  border: none;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  border-radius: 6px;
+  background-color: #4070f4;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.button input:hover{
+  background-color: #265df2;
+}
+
+.form .login-signup{
+  margin-top: 30px;
+  text-align: center;
 }

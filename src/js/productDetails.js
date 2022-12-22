@@ -20,6 +20,9 @@ export default class ProductDetails {
     // add listener to Add to Cart button
     document.getElementById('addToCart')
       .addEventListener('click', this.addToCart.bind(this));
+
+    document.getElementById('cart-card__remove')
+      .addEventListener('click', this.cartRemove.bind(this));
   }
   addToCart() {
     const cartanim = document.querySelector('#cart-animation');
@@ -39,6 +42,18 @@ export default class ProductDetails {
     updateCartNumber();
 
   }
+
+  cartRemove() {
+    let cartContents = getLocalStorage('so-cart');
+    console.log(cartContents);
+    if (!cartContents) {
+      cartContents = [];
+    }
+    cartContents.pop(this.product);
+    setLocalStorage('so-cart', cartContents);
+    updateCartNumber();
+  }
+
   renderProductDetails() {
     return `<section class="product-detail"> <h3>${this.product.Brand.Name}</h3>
     <h2 class="divider">${this.product.NameWithoutBrand}</h2>
